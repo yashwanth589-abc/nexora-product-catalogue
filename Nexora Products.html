@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nexora Products</title>
+<style>
+:root{--bg:#f6f7fb;--sf:#fff;--tx:#14182b;--mu:#667;--bd:#e2e5ee;--ac:#4f46e5;--ac2:#eef0ff;--acx:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1220;--sf:#181c30;--tx:#eceef8;--mu:#9aa0b8;--bd:#2a2f4a;--ac:#8b85ff;--ac2:#23284a;--acx:#10122a;color-scheme:dark}}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+nav{position:sticky;top:0;z-index:20;background:var(--sf);border-bottom:1px solid var(--bd);display:flex;align-items:center;gap:20px;padding:12px 24px;flex-wrap:wrap}
+.logo{font-weight:800;font-size:19px;color:var(--ac);text-decoration:none;margin-right:auto}
+nav a{color:var(--tx);text-decoration:none;font-weight:500}nav a:hover{color:var(--ac)}
+.logo{color:var(--ac)}
+section{max-width:1200px;margin:0 auto;padding:40px 20px}
+.hero{text-align:center;padding:70px 20px 50px}
+.hero h1{font-size:clamp(30px,5vw,48px);margin:0 0 12px;line-height:1.15}
+.hero p{color:var(--mu);max-width:560px;margin:0 auto 24px}
+.btn{background:var(--ac);color:var(--acx);border:0;border-radius:10px;padding:10px 18px;font:inherit;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block}
+.btn.o{background:transparent;color:var(--ac);border:1px solid var(--ac)}
+h2{margin:0 0 20px;font-size:26px}
+.cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:14px}
+.cat{background:var(--sf);border:1px solid var(--bd);border-radius:14px;padding:20px;text-align:center;cursor:pointer;font:inherit;color:var(--tx)}
+.cat:hover{border-color:var(--ac);transform:translateY(-2px)}
+.cat .i{font-size:36px}.cat b{display:block;margin-top:6px}.cat span{color:var(--mu);font-size:13px}
+.cw{display:grid;grid-template-columns:250px 1fr;gap:24px;align-items:start}
+@media(max-width:800px){.cw{grid-template-columns:1fr}}
+aside{background:var(--sf);border:1px solid var(--bd);border-radius:14px;padding:16px}
+aside h4{margin:14px 0 6px;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--mu)}aside h4:first-child{margin-top:0}
+.cl{display:flex;justify-content:space-between;width:100%;background:none;border:0;border-radius:8px;padding:7px 10px;font:inherit;color:var(--tx);cursor:pointer;text-align:left}
+.cl.on{background:var(--ac2);color:var(--ac);font-weight:600}.cl:hover{background:var(--ac2)}
+input,select,textarea{font:inherit;color:var(--tx);background:var(--bg);border:1px solid var(--bd);border-radius:9px;padding:9px 11px;width:100%}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--ac);outline-offset:-1px}
+.pr{display:flex;gap:8px}
+.bar{display:flex;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+.sw{position:relative;flex:1 1 260px}.sw button{position:absolute;right:6px;top:50%;transform:translateY(-50%);background:none;border:0;color:var(--mu);font-size:18px;cursor:pointer;padding:4px 8px}
+.bar select{width:auto;flex:0 0 190px}
+.meta{display:flex;justify-content:space-between;align-items:center;color:var(--mu);margin-bottom:12px;flex-wrap:wrap;gap:8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+.card{background:var(--sf);border:1px solid var(--bd);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.im{background:var(--ac2);height:120px;display:flex;align-items:center;justify-content:center;font-size:52px}
+.cb{padding:14px;display:flex;flex-direction:column;gap:3px;flex:1}
+.cb h3{font-size:15px;margin:0}.cb small{color:var(--mu)}
+.tag{display:inline-block;background:var(--ac2);color:var(--ac);border-radius:6px;padding:1px 8px;font-size:12px;align-self:flex-start;margin:4px 0}
+.price{font-weight:800;font-size:18px;margin:6px 0 8px;margin-top:auto}
+.empty{text-align:center;padding:50px 10px;color:var(--mu);background:var(--sf);border:1px dashed var(--bd);border-radius:14px}
+.md{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:50;display:none;align-items:center;justify-content:center;padding:16px}
+.md.on{display:flex}
+.mb{background:var(--sf);border-radius:16px;max-width:620px;width:100%;max-height:90vh;overflow:auto;position:relative}
+.mb .im{height:200px;font-size:96px}.mc{padding:20px}
+.x{position:absolute;right:12px;top:10px;background:var(--sf);border:1px solid var(--bd);border-radius:50%;width:32px;height:32px;cursor:pointer;color:var(--tx)}
+table{width:100%;border-collapse:collapse;margin:12px 0}td{padding:7px 0;border-bottom:1px solid var(--bd)}td:first-child{color:var(--mu);width:40%}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:30px}@media(max-width:700px){.two{grid-template-columns:1fr}}
+form{display:grid;gap:10px}.ok{color:#16a34a;font-weight:600}
+footer{text-align:center;color:var(--mu);padding:30px 20px;border-top:1px solid var(--bd);font-size:13px}
+</style></head><body>
+<nav><a class="logo" href="#home">Nexora Products</a><a href="#home">Home</a><a href="#categories">Categories</a><a href="#catalogue">All Products</a><a href="#about">About Us</a><a href="#contact">Contact</a></nav>
+
+<div id="home" class="hero"><h1>Hundreds of products.<br>One easy place to explore them.</h1><p>Browse by department, search by name or model number, compare specifications, and get in touch when something catches your eye.</p><a class="btn" href="#catalogue">Browse all products</a> <a class="btn o" href="#categories">View categories</a></div>
+
+<section id="categories"><h2>Shop by category</h2><div class="cats" id="cats"></div></section>
+
+<section id="catalogue"><h2>All products</h2>
+<div class="cw"><aside>
+<h4>Category</h4><div id="catlist"></div>
+<h4>Brand</h4><select id="brand"></select>
+<h4>Price (₹)</h4><div class="pr"><input id="pmin" type="number" min="0" placeholder="Min"><input id="pmax" type="number" min="0" placeholder="Max"></div>
+<h4></h4><button class="btn o" id="clearall" style="width:100%">Clear all filters</button>
+</aside>
+<div>
+<div class="bar"><div class="sw"><input id="q" type="search" placeholder="Search name, brand, model number or keyword…" autocomplete="off" aria-label="Search products"><button id="qx" title="Clear search" aria-label="Clear search" hidden>×</button></div>
+<select id="sort" aria-label="Sort"><option value="az">Name: A to Z</option><option value="za">Name: Z to A</option><option value="lh">Price: Low to high</option><option value="hl">Price: High to low</option></select></div>
+<div class="meta"><span id="count"></span></div>
+<div class="grid" id="grid"></div><div style="text-align:center;margin-top:18px"><button class="btn o" id="more" hidden>Load more</button></div>
+</div></div></section>
+
+<section id="about"><h2>About us</h2><p style="max-width:700px;color:var(--mu)">Nexora Products showcases a wide range of everyday technology and home essentials across six departments. We built this catalogue so you can find basic product information, compare specifications, and only contact us when you’re ready to ask a question.</p></section>
+
+<section id="contact"><h2>Contact</h2><div class="two"><div><p style="color:var(--mu)">Interested in a product? Send us an enquiry and we’ll reply with availability and details.</p><p>📧 hello@nexora.example<br>📞 +91 00000 00000</p></div>
+<form id="cf"><input id="cn" placeholder="Your name" required><input id="ce" type="email" placeholder="Email" required><textarea id="cm" rows="4" placeholder="Your message" required></textarea><button class="btn">Send enquiry</button><div id="cok" class="ok"></div></form></div></section>
+<footer>© Nexora Products · Brands and prices shown are sample catalogue data, not claims of any business partnership.</footer>
+
+<div class="md" id="md"><div class="mb" id="mb"></div></div>
+
+<script>
+const D={
+"Electronics":["🎧",[["Wireless Headphones","Sony,JBL,Boat,Philips",1990,"WH","Bluetooth","Over-ear, 30h battery"],["Bluetooth Speaker","JBL,Sony,Boat,Philips",1490,"SP","Bluetooth","Portable, splash-proof"],["Mechanical Keyboard","Logitech,HP,Philips,Sony",2490,"KB","USB / Bluetooth","Tactile switches"],["LED Monitor","Samsung,HP,Philips,Sony",8990,"MN","HDMI / DisplayPort","24-inch Full HD"],["Soundbar","Sony,Samsung,JBL,Philips",6990,"SB","Bluetooth / HDMI ARC","2.1 channel"]]],
+"Computers":["💻",[["Laptop","HP,Dell,Lenovo,Asus",38990,"LP","Wi-Fi 6, Bluetooth","15.6-inch, 8GB RAM, 512GB SSD"],["Wireless Mouse","Logitech,HP,Dell,Lenovo",590,"MS","2.4GHz USB receiver","1600 DPI, silent click"],["Wireless Keyboard","Logitech,HP,Dell,Lenovo",990,"WK","2.4GHz / Bluetooth","Full-size, spill resistant"],["Webcam","Logitech,HP,Lenovo,Dell",1990,"WC","USB-A","1080p, built-in mic"],["External SSD","Samsung,Sony,HP,Lenovo",4490,"SD","USB-C","1TB, 1000MB/s"]]],
+"Home Appliances":["🏠",[["Table Fan","Philips,Havells,Usha,Bajaj",2290,"TF","Corded","3-speed, 400mm"],["Mixer Grinder","Philips,Bajaj,Prestige,Havells",3290,"MG","Corded","750W, 3 jars"],["Steam Iron","Philips,Usha,Bajaj,Havells",1490,"SI","Corded","1400W, non-stick plate"],["Vacuum Cleaner","Philips,Samsung,Bajaj,Havells",6490,"VC","Corded","1600W, bagless"],["Electric Kettle","Prestige,Philips,Bajaj,Usha",990,"EK","Corded","1.5L, auto shut-off"]]],
+"Mobile Accessories":["📱",[["Fast Charger","Samsung,Anker,Boat,Philips",790,"FC","USB-C PD","33W"],["USB-C Cable","Anker,Boat,Samsung,Philips",299,"CB","USB-C to USB-C","1m braided"],["Phone Case","Spigen,Samsung,Anker,Boat",499,"PC","Snap-on","Shock-absorbing"],["Power Bank","Anker,Boat,Samsung,Philips",1490,"PB","USB-C / USB-A","10000mAh"],["Car Phone Mount","Anker,Boat,Philips,Samsung",599,"CM","Mechanical","360° rotation"]]],
+"Office Supplies":["🗂️",[["Laser Printer","HP,Canon,Epson,Brother",12990,"PR","USB / Wi-Fi","Mono, 28 ppm"],["Scientific Calculator","Casio,Canon,Deli,Orpat",790,"CA","Solar + battery","240 functions"],["A4 Paper Ream","Navneet,Camlin,Deli,Classmate",399,"PP","—","500 sheets, 75 GSM"],["Gel Pen Set","Pilot,Camlin,Deli,Classmate",199,"GP","—","Pack of 10, 0.5mm"],["Stapler","Kangaro,Deli,Pilot,Camlin",249,"ST","—","Up to 25 sheets"]]],
+"Smart Devices":["⌚",[["Smartwatch","Samsung,Noise,Boat,Realme",3990,"SW","Bluetooth 5.3","1.8-inch AMOLED, heart-rate"],["Smart Bulb","Philips,Wipro,Syska,Havells",699,"BL","Wi-Fi","9W RGB, voice control"],["Security Camera","TP-Link,Philips,Samsung,Xiaomi",2490,"CAM","Wi-Fi","2K, night vision"],["Smart Plug","Philips,Wipro,TP-Link,Syska",899,"PL","Wi-Fi","16A, scheduling"],["Smart Speaker","Samsung,JBL,Sony,Philips",3499,"SS","Wi-Fi / Bluetooth","Voice assistant"]]]};
+const icons={};const P=[];let n=0;
+for(const c in D){icons[c]=D[c][0];D[c][1].forEach(t=>{t[1].split(",").forEach((b,bi)=>{["Standard","Pro"].forEach((v,vi)=>{n++;const f=[.9,1,1.12,1.25][bi]*(vi?1.45:1);const m=t[3]+"-"+b.slice(0,2).toUpperCase()+(100+(n*37%800))+(vi?"P":"");
+P.push({id:n,c,b,model:m,icon:D[c][0],name:b+" "+t[0]+(vi?" Pro":""),price:Math.round(t[2]*f/10)*10-1,desc:b+" "+t[0].toLowerCase()+" designed for everyday use"+(vi?", with upgraded performance":"")+".",specs:[["Connectivity",t[4]],["Features",t[5]],["Edition",v],["Warranty",(vi?2:1)+" year"]],kw:t[0].toLowerCase()+" "+c.toLowerCase()})})})})}
+const $=id=>document.getElementById(id);
+const st={cat:"",brand:"",min:"",max:"",q:"",sort:"az",shown:24};
+const norm=s=>s.toLowerCase().trim();
+const squash=s=>norm(s).replace(/[^a-z0-9]/g,"");
+const fmt=p=>"₹"+p.toLocaleString("en-IN");
+P.forEach(p=>{p.hay=norm([p.name,p.b,p.model,p.c,p.kw].join(" "));p.sq=squash(p.hay)});
+const brands=[...new Set(P.map(p=>p.b))].sort();
+$("brand").innerHTML='<option value="">All brands</option>'+brands.map(b=>`<option>${b}</option>`).join("");
+$("cats").innerHTML=Object.keys(D).map(c=>`<button class="cat" data-c="${c}"><div class="i">${icons[c]}</div><b>${c}</b><span>${P.filter(p=>p.c===c).length} products</span></button>`).join("");
+function matches(p,skipCat){
+ if(!skipCat&&st.cat&&p.c!==st.cat)return false;
+ if(st.brand&&p.b!==st.brand)return false;
+ if(st.min!==""&&p.price<+st.min)return false;
+ if(st.max!==""&&p.price>+st.max)return false;
+ const q=norm(st.q);
+ if(q){const toks=q.split(/\s+/);if(!toks.every(t=>p.hay.includes(t)||p.sq.includes(squash(t))))return false}
+ return true}
+function render(){
+ const list=P.filter(p=>matches(p));
+ const s=st.sort;list.sort((a,b)=>s==="az"?a.name.localeCompare(b.name):s==="za"?b.name.localeCompare(a.name):s==="lh"?a.price-b.price:b.price-a.price);
+ $("catlist").innerHTML=[["","All categories",P.filter(p=>matches(p,true)).length],...Object.keys(D).map(c=>[c,icons[c]+" "+c,P.filter(p=>p.c===c&&matches(p,true)).length])].map(([c,l,k])=>`<button class="cl ${st.cat===c?"on":""}" data-c="${c}"><span>${l}</span><span>${k}</span></button>`).join("");
+ $("count").textContent=list.length+" product"+(list.length===1?"":"s")+" found"+(st.cat?" in "+st.cat:"");
+ $("qx").hidden=!st.q;
+ $("grid").innerHTML=list.length?list.slice(0,st.shown).map(p=>`<div class="card"><div class="im">${p.icon}</div><div class="cb"><h3>${p.name}</h3><small>${p.b} · ${p.model}</small><span class="tag">${p.c}</span><div class="price">${fmt(p.price)}</div><button class="btn" data-id="${p.id}">View Details</button></div></div>`).join(""):"";
+ if(!list.length){$("grid").innerHTML='<div class="empty" style="grid-column:1/-1">No products found. Try another search.</div>'}
+ $("more").hidden=list.length<=st.shown}
+document.addEventListener("click",e=>{
+ const c=e.target.closest("[data-c]");if(c){st.cat=c.dataset.c;st.shown=24;render();if(c.classList.contains("cat"))$("catalogue").scrollIntoView()}
+ const v=e.target.closest("[data-id]");if(v)openM(+v.dataset.id);
+ if(e.target.id==="md"||e.target.closest(".x"))$("md").classList.remove("on");
+ const en=e.target.closest("[data-enq]");if(en){const p=P.find(x=>x.id===+en.dataset.enq);$("md").classList.remove("on");$("cm").value="Hi, I’m interested in "+p.name+" (Model "+p.model+"). Please share availability and details.";$("contact").scrollIntoView();$("cn").focus()}});
+function openM(id){const p=P.find(x=>x.id===id);
+ $("mb").innerHTML=`<button class="x" aria-label="Close">×</button><div class="im">${p.icon}</div><div class="mc"><h2 style="margin-bottom:4px">${p.name}</h2><div style="font-size:22px;font-weight:800">${fmt(p.price)}</div><p>${p.desc}</p><table><tr><td>Brand</td><td>${p.b}</td></tr><tr><td>Model</td><td>${p.model}</td></tr><tr><td>Category</td><td>${p.c}</td></tr>${p.specs.map(s=>`<tr><td>${s[0]}</td><td>${s[1]}</td></tr>`).join("")}</table><button class="btn" data-enq="${p.id}">Enquire About This Product</button></div>`;
+ $("md").classList.add("on")}
+document.addEventListener("keydown",e=>{if(e.key==="Escape")$("md").classList.remove("on")});
+$("q").addEventListener("input",e=>{st.q=e.target.value;st.shown=24;render()});
+$("q").addEventListener("keydown",e=>{if(e.key==="Enter"){st.q=e.target.value;render()}});
+$("qx").onclick=()=>{$("q").value="";st.q="";render();$("q").focus()};
+$("brand").onchange=e=>{st.brand=e.target.value;st.shown=24;render()};
+$("pmin").oninput=e=>{st.min=e.target.value;st.shown=24;render()};
+$("pmax").oninput=e=>{st.max=e.target.value;st.shown=24;render()};
+$("sort").onchange=e=>{st.sort=e.target.value;render()};
+$("more").onclick=()=>{st.shown+=24;render()};
+$("clearall").onclick=()=>{Object.assign(st,{cat:"",brand:"",min:"",max:"",q:"",sort:"az",shown:24});$("q").value="";$("brand").value="";$("pmin").value="";$("pmax").value="";$("sort").value="az";render()};
+$("cf").onsubmit=e=>{e.preventDefault();$("cok").textContent="Thank you! Your enquiry has been noted. We’ll be in touch soon.";e.target.reset()};
+render();
+</script></body></html>
